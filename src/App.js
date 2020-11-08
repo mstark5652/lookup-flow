@@ -18,7 +18,6 @@ const App = () => {
   const [{ apiResult, isLoading, error }, , setUrl] = useFetch(null, {}, 'POST')
 
   const handleSubmit = ({ address }) => {
-    console.log('submit address', address)
     if (constants.IP_REGEX.test(address)) {
       setUrl(`${constants.BASE_URL}?address=${encodeURI(address)}`)
     } else {

@@ -1,18 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const pstyle = {
-  fontWeight: 'normal'
-}
+import { makeStyles } from '@material-ui/core/styles'
 
-const spanStyle = {
-  fontWeight: 'bold'
-}
+const useStyles = makeStyles({
+  root: {
+    fontWeight: 'normal'
+  },
+  label: {
+    fontWeight: 'bold'
+  }
+})
 
 const DisplayField = ({ label, value }) => {
+  const classes = useStyles()
   return (
-    <p style={pstyle}>
-      <span style={spanStyle}>{label}</span>
+    <p className={classes.root}>
+      <span className={classes.label}>{label}</span>
       <br />
       {value}
     </p>
