@@ -27,7 +27,7 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth='lg'>
+      <Container maxWidth='lg' data-testid='app-container'>
         <div className='flex-container'>
           <LookupForm handleSubmit={handleSubmit} />
           {error && <Typography variant='body1' className='error-message'>{error ? error.error : 'An error occurred.'}</Typography>}
