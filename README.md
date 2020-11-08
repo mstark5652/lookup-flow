@@ -1,6 +1,7 @@
 # lookup-flow
 Lookup front-end to lookup information about ip addresses, domains, and files security.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Back-end code can be found in [this repo](https://github.com/mstark5652/lookup-lambda).
 
 ## Available Scripts
 
@@ -26,3 +27,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
+
+## AWS Setup
+In `./infrastructure/` there is one document to setup an S3 bucket and static hosting. Github action pushes code to this S3 bucket on push to master branch.
