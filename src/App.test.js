@@ -7,8 +7,11 @@ import App from './App'
 jest.mock('./components/LookupForm', () => {
   return () => <div data-testid='LookupForm' />
 })
-jest.mock('./components/Result', () => {
-  return () => <div data-testid='Result' />
+jest.mock('./components/IpResult', () => {
+  return () => <div data-testid='IpResult' />
+})
+jest.mock('./components/WhoisResult', () => {
+  return () => <div data-testid='WhoisResult' />
 })
 jest.mock('./components/Loading', () => {
   return () => <div data-testid='Loading' />
