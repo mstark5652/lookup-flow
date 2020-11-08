@@ -10,8 +10,6 @@ const S3_BUCKET = process.env.S3_BUCKET
 const S3_STORAGE_TYPE = 'STANDARD'
 const S3_ACL = 'public-read'
 
-const { version } = require('../package.json')
-
 if (!AWS_KEY || !AWS_SECRET || !S3_BUCKET) {
   throw new Error('Failed to find env vars for s3 config!')
 }
@@ -21,10 +19,9 @@ const s3 = new AWS.S3({
   secretAccessKey: AWS_SECRET
 })
 
-const MODULE = 'build'
 const uploadFile = (filePath) => {
   const fileContent = fs.readFileSync(filePath)
-  const filename = filePath.replace('static/', '').replace('build/', `${MODULE}/${version}/`)
+  const filename = filePath.replace('build/', '')
 
   const params = {
     Bucket: S3_BUCKET,
