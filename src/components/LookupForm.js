@@ -9,6 +9,8 @@ import InputField from './InputField'
 const useStyles = makeStyles(theme => ({
   form: {
     textAlign: 'center',
+    padding: theme.spacing(1),
+    margin: theme.spacing(1),
     '& .MuiFormControl-root': {
       margin: theme.spacing(4)
     }
@@ -19,10 +21,9 @@ const LookupForm = ({ handleSubmit }) => {
   const classes = useStyles()
   const [address, setAddress] = useState()
   return (
-    <form className={classes.form}>
+    <form className={classes.form} onSubmit={e => e.preventDefault()}>
       <div className='.MuiFormControl-root'>
         <Typography variant='h1'>Want to look up information on an IP address or domain name?</Typography>
-        <Typography variant='h2'>Enter below:</Typography>
       </div>
       <InputField
         label='ip address/domain name'
