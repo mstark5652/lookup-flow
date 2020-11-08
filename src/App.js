@@ -4,7 +4,8 @@ import Typography from '@material-ui/core/Typography'
 import { ThemeProvider } from '@material-ui/styles'
 
 import LookupForm from './components/LookupForm'
-import Result from './components/Result'
+import WhoisResult from './components/WhoisResult'
+import IpResult from './components/IpResult'
 import Loading from './components/Loading'
 
 import theme from './common/theme'
@@ -32,7 +33,7 @@ const App = () => {
           <LookupForm handleSubmit={handleSubmit} />
           {error && <Typography variant='body1' className='error-message'>{error ? error.error : 'An error occurred.'}</Typography>}
           {!error && isLoading && <Loading />}
-          {!error && !isLoading && apiResult && <Result data={apiResult} />}
+          {!error && !isLoading && apiResult && (apiResult.data ? <WhoisResult data={apiResult.data} /> : <IpResult data={apiResult} />)}
         </div>
       </Container>
     </ThemeProvider>
