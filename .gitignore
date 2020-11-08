@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+infrastructure/.terraform/**
+infrastructure/*.tfstate
+infrastructure/*.tfstate.backup
+.nyc_output
