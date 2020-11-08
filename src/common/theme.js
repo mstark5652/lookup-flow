@@ -14,7 +14,7 @@ const theme = createMuiTheme({
 
 const appTheme = createMuiTheme({
   palette: {
-    primary: { main: '#00D4BA' },
+    primary: { main: '#6832e3' },
     secondary: { main: '#9453CE' }
   },
   typography: {
